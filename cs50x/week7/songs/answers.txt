@@ -1,0 +1,40 @@
+-- Average Energy
+SELECT AVG(energy) AS avg_energy
+FROM songs
+WHERE id IN (SELECT song_id FROM user_top_songs WHERE user_id = 1 LIMIT 100);
+
+-- Average Valence
+SELECT AVG(valence) AS avg_valence
+FROM songs
+WHERE id IN (SELECT song_id FROM user_top_songs WHERE user_id = 1 LIMIT 100);
+
+-- Average Danceability
+SELECT AVG(danceability) AS avg_danceability
+FROM songs
+WHERE id IN (SELECT song_id FROM user_top_songs WHERE user_id = 1 LIMIT 100);
+
+Audio Aura Characterization:
+High Energy, High Valence, High Danceability: The listener enjoys upbeat, happy, and energetic music suitable for dancing.
+Low Energy, High Valence, High Danceability: The listener enjoys positive, danceable music, but not intense or energetic (e.g., relaxed dance music).
+High Energy, Low Valence, Low Danceability: The listener enjoys intense or aggressive music with a low mood and less focus on danceability (e.g., high-energy rock).
+Low Energy, Low Valence, Low Danceability: The listener prefers subdued, melancholic, introspective music, not meant for dancing.
+
+Why the Aura Calculation Might Not Be Representative:
+Over-simplification: Averaging values may miss nuances of a listener’s varying moods and preferences across different times or activities.
+Neglecting Temporal Changes: The aura may not reflect seasonal or time-of-day shifts in music taste.
+Lack of Context: Songs might have different meanings or moods based on the context in which they're heard (e.g., exercise vs. relaxation).
+
+Proposed Improvements for the Audio Aura Calculation:
+Contextual Analysis:
+
+Time-based Analysis: Analyze preferences during different times (e.g., morning, evening, seasons) for a more dynamic aura.
+Listening Activity: Factor in context, like listening to upbeat music during exercise or calming music while reading.
+Song Variability: Calculate the variance or standard deviation of energy, valence, and danceability to capture mood fluctuations.
+
+Use of More Metrics: Include additional metrics like tempo, loudness, or speechiness for deeper insight into mood.
+
+Incorporate User Activity: Consider how often a user skips or replays songs to refine their audio aura.
+
+Sentiment Analysis: Analyze lyrics for sentiment (positive or negative) to improve mood characterization.
+
+Machine Learning Approach: Use machine learning to track mood based on comprehensive data (e.g., listening time, skips, replays), providing a more accurate audio aura.
