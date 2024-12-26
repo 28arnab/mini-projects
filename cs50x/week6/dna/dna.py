@@ -81,7 +81,4 @@ def longest_match(sequence, subsequence):
 
     # Return the longest run found in the sequence
     return longest_run
-
-
-# Call the main function to execute the program
 main()
