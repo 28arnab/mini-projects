@@ -1,2 +1,3 @@
--  single page cv project -> https://roadmap.sh/projects/single-page-cv
--  road map solution -> https://roadmap.sh/projects/single-page-cv/solutions?u=673049b231d65c235db86524
+-  Single page CV project
+  - roadmap project → https://roadmap.sh/projects/single-page-cv
+  -  roadmap solution → https://roadmap.sh/projects/single-page-cv/solutions?u=673049b231d65c235db86524
