@@ -1,5 +1,4 @@
 - Single page CV project
   - roadmap project → <https://roadmap.sh/projects/single-page-cv>
-  - roadmap solution → <https://roadmap.sh/projects/single-page-cv/solutions?u=673049b231d65c235db86524>
 - Basic HTML Website
   - roadmap project → <https://roadmap.sh/projects/basic-html-website>
