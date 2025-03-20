@@ -1,63 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/*CSS for index.html*/
-
 html, body {
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0; 
+    background-color: white;
+    color: rgb(52, 49, 49);
+    transition: background 0.3s, color 0.3s;
 }
 
-.landing_page_footer {
-
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: #42bff5; /* Adjust to match your theme */
-    padding: 10px;
-    text-align: center;
-
-
-}
-
-.CopyRights{
+.dark-mode {
+    background-color: rgb(63, 60, 60);
     color: white;
 }
 
-table{
-    margin: auto;
+.dark-mode .heading tr:nth-child(1) td:nth-child(n+1):nth-child(-n+3) {
+    background-color: rgb(52, 49, 49);
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='rgb(65, 190, 240)' stroke-width='3.0'/%3E%3C/svg%3E");
+    background-size: 8.5px 9px;
 }
 
-.education{
-    margin: auto;
-    margin-left: 2%;
+.toggle-container {
+    display: flex;
+    align-items: center;
 }
 
-.teacher_review tr:nth-child(1) p:nth-child(n+1) {
-border: 2px dashed;
-text-align: center;
-border-radius: 10px;
-padding: 10px;
-} 
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c2bcbc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    transition: 0.3s;
+    background-image: url('../assets/icons/CrescentMoon.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+#theme-toggle {
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
 
 nav {
-    min-height: 60px; 
+    min-height: 60px;
     background-color: rgb(65, 190, 240);
-    padding: 15px 5%; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    padding: 15px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 nav ul {
-    list-style: none; 
+    list-style: none;
     display: flex;
-    gap: 20px; 
+    gap: 20px;
     padding: 0;
     margin: 0;
 }
@@ -70,11 +110,10 @@ nav a {
     position: relative;
     text-decoration: none;
     color: white;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     padding: 5px 0;
 }
 
-/* Underline animation */
 nav a::after {
     content: "";
     position: absolute;
@@ -90,78 +129,160 @@ nav a:hover::after {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: row; 
-        padding: 10px;
-    }
-    nav ul {
-        flex-direction: row;
-        gap: 10px;
-    }
+a {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+a:link {
+    color: #004080;
+}
+
+a:visited {
+    color: #3B3B98;
+}
+
+a:hover {
+    color: #FFA500;
+}
+
+a:active {
+    color: #C70039;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #FFA500;  
+    transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Special case for navigation links to keep white underline */
+nav a::after {
+    background-color: white;
+}
+
+table {
+    margin: auto;
 }
 
 .heading tr:nth-child(n+1):nth-child(-n+2) td:nth-child(n+1):nth-child(-n+3) {
-border: 1.5px dashed;
-text-align: center;
+    border: 1.5px dashed;
+    text-align: center;
 }
- 
+
 .heading tr:nth-child(1) td:nth-child(n+1):nth-child(-n+3) {
-    /* White background with an SVG diagonal pattern */
     background-color: white;
-background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='rgb(65, 190, 240)' stroke-width='3.0'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='rgb(65, 190, 240)' stroke-width='3.0'/%3E%3C/svg%3E");
     background-size: 8.5px 9px;
 }
 
-/*CSS for contact.html*/
+.education {
+    margin: auto;
+    margin-left: 2%;
+}
 
+.teacher_review tr:nth-child(1) p:nth-child(n+1) {
+    border: 2px dashed;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
 
 input, textarea, select, button {
-    border: 2px dashed rgb(65, 190, 240); /* Blue border */
-    border-radius: 5px; /* Rounded corners */
+    border: 2px dashed rgb(65, 190, 240);
+    border-radius: 5px;
     padding: 8px;
-    outline: none; /* Removes default focus outline */
+    outline: none;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Style on focus */
 input:focus, textarea:focus, select:focus {
-    border-color: rgb(30, 144, 255); /* Darker blue when active */
-    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5); /* Glowing effect */
+    border-color: rgb(30, 144, 255);
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
 }
 
-/* Style a specific type of input */
 input[type="text"] {
     border-style: dashed;
 }
 
-.form{
+.form {
     margin: auto;
     margin-top: 10%;
     border: 2px dashed;
 }
 
 .form_contents {
-display: grid;
+    display: grid;
     place-items: center;
     height: auto;
+    padding: 20px;
 }
 
-.form_contents input[type="submit"]{
+.form_contents input[type="submit"] {
     margin-top: 5%;
-    font-family: 'Poppins', sans-serif;
     color: white;
     border: 2px solid;
     background-color: rgb(16, 148, 200);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form_contents input[type="submit"]:hover {
+    background-color: rgb(12, 120, 164);
+}
+
+.landing_page_footer, .contact_page_footer {
+    background-color: #42bff5;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+.landing_page_footer {
+    position: relative;
+    bottom: 0;
 }
 
 .contact_page_footer {
-
     position: fixed;
     bottom: 0;
-    width: 100%;
-    background-color: #42bff5; /* Adjust to match your theme */
-    padding: 10px;
-    text-align: center;
+}
 
+.CopyRights {
+    color: white;
+    margin: 0;
+}
 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .form {
+        margin-top: 5%;
+        width: 90%;
+    }
+    
+    .contact_page_footer {
+        position: relative;
+    }
 }

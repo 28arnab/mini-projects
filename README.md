@@ -2,3 +2,5 @@
   - roadmap project → <https://roadmap.sh/projects/single-page-cv>
 - Basic HTML Website
   - roadmap project → <https://roadmap.sh/projects/basic-html-website>
+- Personal Portfolio
+  - roadmap project → <https://roadmap.sh/projects/portfolio-website>
